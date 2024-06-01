@@ -1,0 +1,27 @@
+body {
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  box-sizing: border-box;
+  width: 1128px;
+  margin: 15px auto;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+/* body div.ReactModal__Overlay.ReactModal__Overlay--after-open {
+  background-color: black;
+} */

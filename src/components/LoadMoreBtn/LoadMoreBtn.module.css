@@ -1,0 +1,20 @@
+.loadMoreButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.loadMoreButton {
+  padding: 12px;
+  border-radius: 12px;
+  color: #fff;
+  background-color: #0040ca;
+  border: 2px solid #0040ca;
+  font-size: 20px;
+}
+
+.loadMoreButton:hover,
+.loadMoreButton:focus {
+  border-color: #00319c;
+  background-color: #00319c;
+}
