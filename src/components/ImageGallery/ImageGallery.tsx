@@ -1,9 +1,15 @@
 import ImageCard from "../ImageCard/ImageCard";
 import css from "./ImageGallery.module.css";
+import { unsplashImageData } from "../../images-api";
 
-export default function ImageGallery({ items, handleClickOnImage  }) {
+type Props = {
+  items: unsplashImageData[];
+  handleClickOnImage: (imageData: unsplashImageData) => void;
+};
+
+export default function ImageGallery({ items, handleClickOnImage }: Props) {
   return (
-    <ul className={css.gallery} id="gallery" >
+    <ul className={css.gallery} id="gallery">
       {items.map((item) => {
         return (
           <li key={item.id} className={css.galleryItem}>

@@ -1,6 +1,12 @@
 import css from "./ImageCard.module.css";
+import { unsplashImageData } from "../../images-api";
 
-export default function ImageCard({ data, onClick }) {
+type Props = {
+  data: unsplashImageData;
+  onClick: (imageData: unsplashImageData) => void;
+};
+
+export default function ImageCard({ data, onClick }: Props) {
   return (
     <div>
       <img

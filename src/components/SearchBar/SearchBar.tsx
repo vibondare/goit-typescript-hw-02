@@ -1,17 +1,24 @@
-import { useId } from "react";
 import css from "./SearchBar.module.css";
 import toast, { Toaster } from "react-hot-toast";
 
-export default function SearchBar({ onSearch }) {  
+type Props = {
+  onSearch: (newQuery: string) => void;
+};
+
+export default function SearchBar({ onSearch }: Props) {
   return (
     <header className={css.header}>
       <form
-        onSubmit={(event) => {
+        onSubmit={(event: React.FormEvent<HTMLFormElement>) => {
           event.preventDefault();
-          const form = event.target;
-          const searchQuery = form.elements.query.value;
+          const form = event.target as HTMLFormElement;
+          const searchQuery = (
+            form.elements.namedItem("query") as HTMLInputElement
+          ).value;
           if (searchQuery.trim() === "") {
-            toast.error("To search for images, search field must be filled in!");
+            toast.error(
+              "To search for images, search field must be filled in!"
+            );
             return;
           }
           onSearch(searchQuery);
